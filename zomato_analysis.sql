@@ -127,5 +127,54 @@ with cte1 as (select s.userid,s.product_id,p.price
 		from cte3)
         select product_id,sum(zomato_points) as tot_zp_pr
         from cte4
-        group by product_id
-     
+        group by product_id;
+       
+
+-- 10 In the first one year after a customer joins the gold program (including their join date) irrespective
+-- of what the customer has purchased they earn 5 zomato points for every 10 rs spent who earned more more 1 or 3
+-- and what was their points earnings in thier first yr?
+
+with cte1 as (select s.userid,s.product_id,s.created_date,g.gold_signup_date
+	from sales s
+    join goldusers_signup g 
+    on s.userid=g.userid 
+    and s.created_date >= g.gold_signup_date
+    and s.created_date <= DATE_ADD(g.gold_signup_date,interval 1 year))
+    select cte1.*,p.price,
+    round((p.price/2),2) as points -- 5rs=10pt therefore 1rs=2pt
+    from cte1 
+    join product p
+    on cte1.product_id=p.product_id;
+    
+-- rank all the transactions of customers
+select *,
+rank() over(partition by userid order by created_date) as rnk
+from sales;
+
+-- rank all the transaction for each memeber whenever they are a zomato gold member
+-- for every non gold member mark transaction na
+with cte1 as (select s.userid,s.product_id,s.created_date,g.gold_signup_date
+	from sales s
+    left join goldusers_signup g 
+    on s.userid=g.userid 
+    and s.created_date >= g.gold_signup_date
+    ), cte2 as (
+    select cte1.*,
+    case 
+    when gold_signup_date is null 
+    then 0
+    else
+    rank() over(partition by userid order by created_date desc) 
+    end  as rnk
+    from cte1
+    )
+    select cte2.*,
+    case 
+    when gold_signup_date is null then
+     "na"
+	else
+    cte2.rnk
+    end as rnnk
+    from cte2
+    
+    
