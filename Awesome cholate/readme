@@ -1,0 +1,46 @@
+for practice i have used a data set and performed several analysis on it using sql the database has 4 tables namely:
+people
+geo
+products
+sales
+ Here is the list of all the queries I provided, organized by topic:
+
+**JOINS and WHERE Clause:**
+1. Retrieve sales records from the "sales" table for a specific salesperson (e.g., SP01).
+2. Get sales records from the "sales" table for a specific product (e.g., P04).
+3. Retrieve sales records from the "sales" table for a specific location (e.g., Hyderabad).
+4. Get sales records from the "sales" table for a specific region (e.g., APAC).
+
+**Aggregation and GROUP BY:**
+5. Calculate the total sales amount for each salesperson in the "sales" table.
+6. Find the total sales amount for each product category in the "sales" table.
+7. Get the total sales amount for each region from the "sales" table.
+8. Calculate the average sales amount for each salesperson in the "sales" table.
+
+**Sorting and LIMIT:**
+9. Retrieve sales records from the "sales" table, sorted by sales amount in descending order.
+10. Get sales records from the "sales" table, sorted by sales amount in ascending order, and show only the top 10 records.
+
+**Combining Multiple Conditions (AND, OR):**
+11. Retrieve sales records from the "sales" table for a specific salesperson (e.g., SP01) and product (e.g., P04).
+12. Get sales records from the "sales" table for a specific location (e.g., Hyderabad) and region (e.g., APAC).
+
+**Subqueries:**
+13. Find the salesperson(s) who made the maximum sales (amount) in the "sales" table.
+14. Retrieve products and their total number of sales records from the "products" table, ordered by the number of sales records in descending order.
+
+**EXISTS and NOT EXISTS:**
+15. Find sales records in the "sales" table where the product sold exists in the "products" table.
+16. Get sales records in the "sales" table where the product sold does not exist in the "products" table.
+
+**Aggregating Data on Multiple Levels:**
+17. Calculate the total sales amount for each salesperson and product combination in the "sales" table.
+
+**Using CASE Statements:**
+18. Display a column that categorizes sales amounts in the "sales" table as 'High', 'Medium', or 'Low' based on predefined thresholds.
+
+**Using JOINS with Multiple Tables:**
+19. Retrieve sales records from the "sales" table along with the salesperson name and team from the "salesperson" table.
+20. Get sales records from the "sales" table along with the product name and category from the "products" table.
+
+Remember, SQL is all about practice, so feel free to experiment with these queries and modify them to suit your needs. Happy querying!
