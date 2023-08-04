@@ -1,0 +1,87 @@
+The "whatsapp" database portrays a simplified representation of a social messaging application like WhatsApp. It consists of three main tables: "groups," "membership," and "users."
+
+1. Groups Table: This table stores information about different groups within the messaging application. It has two columns: "group_id" and "group_name." The "group_id" is a unique identifier for each group, and the "group_name" stores the name of the group.
+
+2. Membership Table: This table represents the membership of users in various groups. It has three columns: "membership_id," "group_id," and "user_id." The "membership_id" is a unique identifier for each membership record, "group_id" is a foreign key referring to the "group_id" in the "groups" table, and "user_id" is a foreign key referring to the "user_id" in the "users" table.
+
+3. Users Table: This table contains information about users of the messaging application. It has four columns: "user_id," "name," "age," and "emergency_contact." The "user_id" is a unique identifier for each user, "name" stores the name of the user, "age" stores the age of the user, and "emergency_contact" stores the contact number for emergencies.
+
+With this database, we can retrieve various types of information related to the users, groups, and their memberships. Here are some examples of the information we can retrieve:
+
+1. Get the names of all the groups available in the application.
+2. Find the total number of users in each group.
+3. Retrieve the names and ages of users who are members of a specific group.
+4. Calculate the average age of users in each group.
+5. Find out which users are members of multiple groups.
+6. Get the emergency contact numbers of users.
+7. Track changes in the group names over time using temporal tables.
+8. Retrieve the list of users who are not members of any group.
+9. Identify users who are the youngest or oldest in each group.
+10. Perform data modifications such as adding new users, creating new groups, or adding users to groups.
+
+The database provides a foundation for managing user data, group data, and their associations, enabling the application to efficiently handle messaging and group interactions. By writing complex SQL queries and utilizing advanced SQL topics, we can gain valuable insights from the database and optimize its performance for a better user experience.
+
+ Here are some example questions and queries related to the `whatsapp` database using the provided tables (`groups`, `membership`, and `users`) for each complex SQL topic:
+
+1. Subqueries and Derived Tables:
+   - Q: Find the names of users who are members of at least one group.
+   - Q: Retrieve all groups that have users aged above 30.
+
+2. Common Table Expressions (CTEs):
+   - Q: Get the list of group names along with the count of members for each group using a CTE.
+   - Q: Find the names of users who are members of multiple groups using a CTE.
+
+3. Window Functions:
+   - Q: Calculate the average age of users and display it as a separate column for each user record.
+   - Q: Rank users based on their age within each group.
+
+4. Complex Joins:
+   - Q: List all users and the names of the groups they belong to.
+   - Q: Retrieve all group names along with their respective members' names.
+
+5. Unions and Intersect:
+   - Q: Combine the names of users and groups in a single result set.
+   - Q: Find common users between two groups.
+
+6. Pivot and Unpivot:
+   - Q: Pivot the data to display group names as columns and users as rows.
+   - Q: Unpivot the data to display user names and their corresponding groups in separate rows.
+
+7. Recursive Queries:
+   - Q: Retrieve all members of a group and their nested members in a hierarchical structure.
+
+8. Advanced Aggregations:
+   - Q: Calculate the total count of members across all groups.
+   - Q: Determine the group with the maximum number of users.
+
+9. Subquery Factoring (WITH clause):
+   - Q: Get the names of users who are members of the largest group using the WITH clause.
+   - Q: Retrieve the group names and the count of users for each group using the WITH clause.
+
+10. Indexes and Performance Optimization:
+    - Q: Analyze the execution plan for a specific query and suggest performance improvements.
+
+11. Transactions and Concurrency Control:
+    - Q: Demonstrate how transactions work by performing multiple insert operations on the tables.
+
+12. Triggers:
+    - Q: Create a trigger that automatically inserts a record into a log table whenever a new group is created.
+
+13. Stored Procedures and Functions:
+    - Q: Write a stored procedure that returns the names of groups containing a specific user.
+
+14. Materialized Views:
+    - Q: Create a materialized view that stores the count of members for each group.
+
+15. Temporal Tables:
+    - Q: Retrieve all users who were members of a specific group at a particular date.
+
+16. JSON and XML Processing:
+    - Q: Store additional user information as JSON data and query it.
+
+17. Regular Expressions:
+    - Q: Find all users whose names start with a specific letter using regular expressions.
+
+18. SQL Injection and Security:
+    - Q: Demonstrate a safe way to handle user input to prevent SQL injection vulnerabilities.
+
