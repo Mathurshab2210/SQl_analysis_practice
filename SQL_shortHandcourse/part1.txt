@@ -1,0 +1,78 @@
+-- 1. Creating and Managing Databases
+
+-- 1.1 CREATE DATABASE
+CREATE DATABASE CompanyDB;
+
+-- 1.2 CREATE TABLE
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+
+-- 2. Inserting Data into Tables
+
+-- 2.1 INSERT INTO
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES (1, 'John', 'Doe', 'HR', 50000.00);
+
+-- 2.2 INSERT INTO (Additional Example)
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES (2, 'Jane', 'Smith', 'IT', 60000.00);
+
+-- 3. Querying Data
+
+-- 3.1 SELECT
+SELECT * FROM Employees;
+
+-- 3.2 WHERE
+SELECT * FROM Employees
+WHERE Department = 'HR';
+
+-- 3.3 DISTINCT
+SELECT DISTINCT Department FROM Employees;
+
+-- 4. Updating and Deleting Data
+
+-- 4.1 UPDATE
+UPDATE Employees
+SET Salary = 55000.00
+WHERE EmployeeID = 1;
+
+-- 4.2 DELETE
+DELETE FROM Employees
+WHERE EmployeeID = 1;
+
+-- 5. Managing Tables
+
+-- 5.1 ALTER TABLE
+ALTER TABLE Employees
+ADD HireDate DATE;
+
+-- Drop the 'HireDate' column from the 'Employees' table
+ALTER TABLE Employees
+DROP COLUMN HireDate;
+
+-- 5.2 DROP TABLE
+DROP TABLE Employees;
+
+-- 5.3 TRUNCATE TABLE
+TRUNCATE TABLE Employees;
+
+-- 6. Sorting and Limiting Results
+
+-- 6.1 ORDER BY
+SELECT * FROM Employees
+ORDER BY Salary DESC;
+
+-- 6.2 LIMIT
+SELECT * FROM Employees
+ORDER BY Salary DESC
+LIMIT 5;
+
+-- 6.3 OFFSET
+SELECT * FROM Employees
+ORDER BY Salary DESC
+LIMIT 5 OFFSET 5;

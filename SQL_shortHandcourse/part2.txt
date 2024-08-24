@@ -1,0 +1,45 @@
+**1. Highest Salary in Each Department**
+
+```sql
+SELECT department, MAX(salary) AS highest_salary
+FROM employees
+GROUP BY department;
+```
+- **Explanation**: This query returns the highest salary in each department.
+
+ **2. Lowest Salary in Each Department**
+
+```sql
+SELECT department, MIN(salary) AS lowest_salary
+FROM employees
+GROUP BY department;
+```
+- **Explanation**: This query returns the lowest salary in each department.
+
+ **3. Total Number of Employees and Average Salary per Department**
+
+```sql
+SELECT department, COUNT(employee_id) AS total_employees, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+```
+- **Explanation**: This query calculates both the number of employees and the average salary for each department.
+
+ **4. Total Salary per Department Ordered by Department Name**
+
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+ORDER BY department ASC;
+```
+- **Explanation**: This query sums the total salary for each department and orders the results alphabetically by department name.
+
+ **5. Total Number of Employees Hired Each Year**
+
+```sql
+SELECT YEAR(hire_date) AS hire_year, COUNT(employee_id) AS total_hired
+FROM employees
+GROUP BY YEAR(hire_date)
+ORDER BY hire_year ASC;
+```
